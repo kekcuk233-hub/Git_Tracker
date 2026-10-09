@@ -14,7 +14,7 @@ type Activity struct {
 	Type string `json:"type"`
 	Repo struct {
 		Name string `json:"name"`
-		Url  string `json:url`
+		Url  string `json:"url"`
 	} `json:"repo"`
 	Payload struct {
 		Action  string            `json:"action"`
@@ -77,7 +77,7 @@ func main() {
 	for i, event := range git_data {
 		fmt.Printf("%d. Type: %s\n", i+1, event.Type)
 		fmt.Printf("   Repo: %s\n", event.Repo.Name)
-		fmt.Printf("URL: %s\n", event.Repo.Url)
+		fmt.Printf("   URL: %s\n", event.Repo.Url)
 		fmt.Printf("   Action: %s\n\n", event.Payload.Action)
 	}
 }
